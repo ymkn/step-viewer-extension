@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>STEPビューア</title>
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<header>
+  <div class="title">STEPビューア</div>
+  <button id="openBtn" type="button">ファイルを開く</button>
+  <input id="fileInput" type="file" accept=".step,.stp,.iges,.igs,.brep" hidden>
+  <div id="fileName" class="filename">ファイル未選択</div>
+  <div id="status" class="status"></div>
+</header>
+<main>
+  <div id="canvasWrap">
+    <div id="dropHint">
+      <p class="big">STEPファイルをここにドロップ</p>
+      <p>または「ファイルを開く」から選択（.step / .stp / .iges / .igs / .brep）</p>
+      <p class="note">解析はすべてこのブラウザ内で行われ、ファイルは外部送信されません。</p>
+    </div>
+  </div>
+  <aside>
+    <section>
+      <h2>視点</h2>
+      <div class="btnrow">
+        <button data-view="iso" type="button">斜め</button>
+        <button data-view="top" type="button">上面</button>
+        <button data-view="front" type="button">正面</button>
+        <button data-view="right" type="button">右側面</button>
+      </div>
+    </section>
+    <section>
+      <h2>表示</h2>
+      <label><input type="checkbox" id="optWireframe"> ワイヤーフレーム</label>
+      <label><input type="checkbox" id="optEdges"> エッジ</label>
+      <label><input type="checkbox" id="optGrid"> グリッド</label>
+      <label><input type="checkbox" id="optRotate"> 自動回転</label>
+    </section>
+    <section>
+      <h2>分割精度（再解析）</h2>
+      <select id="optPrecision">
+        <option value="coarse">粗い（速い）</option>
+        <option value="standard" selected>標準</option>
+        <option value="fine">細かい（遅い）</option>
+      </select>
+    </section>
+    <section>
+      <h2>情報</h2>
+      <dl>
+        <dt>外形寸法</dt><dd id="infoSize">-</dd>
+        <dt>メッシュ数</dt><dd id="infoMeshes">-</dd>
+        <dt>三角形数</dt><dd id="infoTris">-</dd>
+        <dt>中心</dt><dd id="infoCenter">-</dd>
+      </dl>
+    </section>
+  </aside>
+</main>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<iframe id="sandboxFrame" src="sandbox.html" style="display:none"></iframe>
+<script src="viewer.js"></script>
+</body>
+</html>

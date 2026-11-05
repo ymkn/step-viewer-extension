@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #26241f; color: #ece5d3; font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", sans-serif; }
+header { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid #45403a; flex-wrap: wrap; }
+.title { font-size: 17px; font-weight: 600; letter-spacing: .04em; }
+button { background: #3d382f; color: #ece5d3; border: 1px solid #5b554b; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; }
+button:hover { background: #4a443a; }
+#openBtn { background: #6d5f3f; border-color: #8a7a52; }
+#openBtn:hover { background: #7d6c47; }
+.filename { font-size: 13px; color: #cfc6ae; }
+.status { font-size: 12px; color: #a99f88; margin-left: auto; }
+main { display: flex; height: calc(100% - 53px); }
+#canvasWrap { position: relative; flex: 1; min-width: 0; }
+#canvasWrap canvas { display: block; }
+#canvasWrap.dragging { outline: 2px dashed #c8a95c; outline-offset: -8px; }
+#dropHint { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #a99f88; pointer-events: none; text-align: center; padding: 20px; }
+#dropHint .big { font-size: 20px; color: #cfc6ae; margin: 0; }
+#dropHint p { margin: 0; font-size: 13px; }
+#dropHint .note { font-size: 11px; color: #7e7663; }
+aside { width: 230px; border-left: 1px solid #45403a; padding: 12px 14px; overflow-y: auto; flex-shrink: 0; }
+aside h2 { font-size: 12px; color: #a99f88; margin: 14px 0 8px; font-weight: 600; letter-spacing: .06em; }
+aside section:first-child h2 { margin-top: 0; }
+.btnrow { display: flex; flex-wrap: wrap; gap: 6px; }
+aside label { display: block; font-size: 13px; margin: 6px 0; cursor: pointer; }
+aside select { width: 100%; background: #3d382f; color: #ece5d3; border: 1px solid #5b554b; border-radius: 6px; padding: 5px 8px; font-size: 13px; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 12px; margin: 0; }
+dt { color: #a99f88; }
+dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }

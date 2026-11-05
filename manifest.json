@@ -1,0 +1,30 @@
+{
+  "action": {
+    "default_title": "STEPビューアを開く"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "description": "STEP/STP/IGES/BREPファイルをブラウザ内で解析して3D表示するビューア。ローカルファイルをファイル選択またはドラッグ＆ドロップで開けます。ファイルは外部送信されません。",
+  "host_permissions": [
+    "file:///*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 3,
+  "name": "STEPビューア",
+  "permissions": [
+    "tabs",
+    "webNavigation"
+  ],
+  "sandbox": {
+    "pages": [
+      "sandbox.html"
+    ]
+  },
+  "version": "1.1.1"
+}
